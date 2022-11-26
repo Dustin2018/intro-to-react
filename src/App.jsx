@@ -1,23 +1,20 @@
 
+import { useState } from 'react';
 import './App.css';
 import Title from './Title'
 
 function App() {
+  const [count, setCount] = useState(0)
+  const increaseCount = () => {
+    setCount(count + 1)
+  }
+  
   return (
     <div className="App">
       <header className="App-header">
-        <Title />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        
+        The current count is {count}
+        <button onClick={increaseCount}>Increase Count</button>
       </header>
     </div>
   );
